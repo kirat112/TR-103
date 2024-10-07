@@ -67,7 +67,8 @@
   
   .table-container {
     margin: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
+    overflow-x: hidden; 
+    /* Enables horizontal scrolling if the table is too wide */
   }
   
   .table {
