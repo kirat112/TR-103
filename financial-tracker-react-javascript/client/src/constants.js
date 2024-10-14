@@ -1,1 +1,1 @@
-export const backendUrl = "https://finance-tracker.chandanbir.me/"
+export const backendUrl = "https://finance-tracker.chandanbir.me"
