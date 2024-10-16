@@ -12,9 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 const mongoURI = (process.env.MONGO_URL);
-console.log(
-  mongoURI
-)
+
 mongoose
   .connect(mongoURI)
   .then(() => console.log("CONNECTED TO MONGODB!"))

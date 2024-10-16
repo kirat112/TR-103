@@ -81,6 +81,7 @@ export const FinancialRecordForm = () => {
             <option value="Credit Card">Credit Card</option>
             <option value="Cash">Cash</option>
             <option value="Bank Transfer">Bank Transfer</option>
+            <option value="UPI">UPI</option>
           </select>
         </div>
         <button type="submit" className="button">

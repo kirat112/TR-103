@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Dashboard } from "./pages/dashboard";
-import { Auth } from "./pages/auth";
+import { Auth } from "./pages/auth/Auth";
 import { FinancialRecordsProvider } from "./contexts/financial-record-context";
-import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton, SignInButton, SignUpButton } from "@clerk/clerk-react";
 
 function App() {
   return (
@@ -20,8 +20,11 @@ function App() {
           {/* Show a login button when not signed in */}
           <SignedOut>
             <SignInButton mode="modal">
-              <button>Login</button>
+              <button>Sign In</button>
             </SignInButton>
+            <SignUpButton mode="modal">
+              <button>Sign Up</button>
+            </SignUpButton>
           </SignedOut>
         </div>
 
@@ -34,7 +37,10 @@ function App() {
               </FinancialRecordsProvider>
             }
           />
-          <Route path="/auth" element={<Auth />} />
+          <Route 
+            path="/auth" 
+            element={<Auth />} 
+          />
         </Routes>
       </div>
     </Router>
