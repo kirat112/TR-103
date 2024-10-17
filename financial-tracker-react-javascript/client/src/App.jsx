@@ -17,15 +17,6 @@ function App() {
             <UserButton />
           </SignedIn>
 
-          {/* Show a login button when not signed in */}
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button>Sign In</button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button>Sign Up</button>
-            </SignUpButton>
-          </SignedOut>
         </div>
 
         <Routes>
@@ -33,7 +24,12 @@ function App() {
             path="/"
             element={
               <FinancialRecordsProvider>
-                <Dashboard />
+                <SignedIn>
+                  <Dashboard />
+                </SignedIn>
+                <SignedOut>
+                  <Auth/>
+                </SignedOut>               
               </FinancialRecordsProvider>
             }
           />
