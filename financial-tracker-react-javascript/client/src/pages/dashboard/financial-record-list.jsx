@@ -96,13 +96,19 @@ export const FinancialRecordList = () => {
       {
         Header: "Date",
         accessor: "date",
-        Cell: (props) => (
-          <EditableCell
-            {...props}
-            updateRecord={updateCellRecord}
-            editable={false}
-          />
-        ),
+        Cell: ({ value }) => {
+          const date = new Date(value); 
+          const formattedDateTime = date.toLocaleString("en-US", {
+            year: "numeric",
+            month: "short",   
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: true,    
+          });
+          return formattedDateTime;
+        },
       },
       {
         Header: "Delete",
