@@ -19,7 +19,7 @@ h2 {
 
 /* Common class for all buttons */
 .button {
-  background-color: #3498db;
+  background-color: #16da1d;
   color: #ffffff;
   border: none;
   padding: 8px 15px;
@@ -46,6 +46,18 @@ h2 {
 
 .button-delete:hover {
   background-color: #343cdb;
+}
+
+/* delete button */
+.del{
+  background-color: #e9350d;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 /* Common class for all input fields and selects */
