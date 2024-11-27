@@ -116,7 +116,7 @@ export const FinancialRecordList = () => {
         Cell: ({ row }) => (
           <button
             onClick={() => deleteRecord(row.original._id ?? "")}
-            className="button"
+            className="del"
           >
             Delete
           </button>
