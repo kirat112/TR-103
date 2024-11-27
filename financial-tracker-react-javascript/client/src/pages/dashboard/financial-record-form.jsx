@@ -205,10 +205,10 @@ export const FinancialRecordForm = () => {
           </select>
         </div>
         <button type="submit" className="button" onClick={handleAddExpense}>
-          Add Expense
+          Received
         </button>
         <button type="submit" className="del" onClick={handleSubtractExpense}>
-          Subtract Expense
+          Spent
         </button>
       </form>
     </div>
