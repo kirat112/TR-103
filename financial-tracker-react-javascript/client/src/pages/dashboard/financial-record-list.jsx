@@ -50,6 +50,17 @@ export const FinancialRecordList = () => {
   const columns = useMemo(
     () => [
       {
+        Header: "Father Name",
+        accessor: "fatherName",
+        Cell: (props) => (
+          <EditableCell
+            {...props}
+            updateRecord={updateCellRecord}
+            editable={true}
+          />
+        ),
+      },
+      {
         Header: "Description",
         accessor: "description",
         Cell: (props) => (

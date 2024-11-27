@@ -98,8 +98,10 @@
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 import { useFinancialRecords } from "../../contexts/financial-record-context";
+// import { set } from "mongoose";
 
 export const FinancialRecordForm = () => {
+  const [fatherName, setFatherName] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
@@ -115,6 +117,7 @@ export const FinancialRecordForm = () => {
       userId: user?.id ?? "",
       date: new Date(),
       description: description,
+      fatherName: fatherName,
       amount: parseFloat(amount), // Positive amount for adding expense
       category: category,
       paymentMethod: paymentMethod,
@@ -132,6 +135,7 @@ export const FinancialRecordForm = () => {
       userId: user?.id ?? "",
       date: new Date(),
       description: description,
+      fatherName: fatherName,
       amount: -Math.abs(parseFloat(amount)), // Negative amount for subtracting expense
       category: category,
       paymentMethod: paymentMethod,
@@ -143,6 +147,7 @@ export const FinancialRecordForm = () => {
 
   // Reset form fields after submission
   const resetForm = () => {
+    setFatherName("");
     setDescription("");
     setAmount("");
     setCategory("");
@@ -152,6 +157,16 @@ export const FinancialRecordForm = () => {
   return (
     <div className="form-container">
       <form>
+        <div className="form-field">
+          <label>Father Name:</label>
+          <input
+            type="text"
+            required
+            className="input"
+            value={fatherName}
+            onChange={(e) => setFatherName(e.target.value)}
+          />
+        </div>
         <div className="form-field">
           <label>Description:</label>
           <input
